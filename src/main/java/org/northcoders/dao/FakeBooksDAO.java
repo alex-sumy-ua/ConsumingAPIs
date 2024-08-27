@@ -15,7 +15,7 @@ public class FakeBooksDAO {
 
     public FakeBooksDAO() {
         this.webClient = WebClient.builder()
-                .baseUrl("https://fakerapi.it/api/")
+           //     .baseUrl("https://fakerapi.it/api/")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }
@@ -24,7 +24,7 @@ public class FakeBooksDAO {
 
 public ArrayList<Book> getBooks() {
     ResponseEntity<Data> response = webClient.get()
-            .uri("v1/books")
+      //      .uri("v1/books")
             .accept(MediaType.APPLICATION_JSON)
             .retrieve()
             .toEntity(Data.class)
