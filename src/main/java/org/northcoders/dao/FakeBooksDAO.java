@@ -1,13 +1,12 @@
 package org.northcoders.dao;
 
 import org.northcoders.ApiResponse;
-import org.northcoders.model.Book;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
-public class FakeBooksDAO {
+public class FakeBooksDAO <E> {
 
     private final WebClient webClient;
 
@@ -18,9 +17,9 @@ public class FakeBooksDAO {
                 .build();
     }
 
-    public List<Book> getBooks() {
+    public List<E> getData(String parameter) {
         ApiResponse response = webClient.get()
-                .uri("/books")
+                .uri(parameter)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(ApiResponse.class)
@@ -28,4 +27,5 @@ public class FakeBooksDAO {
 
         return response != null ? response.getData() : null;
     }
+
 }

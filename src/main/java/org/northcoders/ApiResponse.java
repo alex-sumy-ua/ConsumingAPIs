@@ -4,11 +4,11 @@ import org.northcoders.model.Book;
 
 import java.util.List;
 
-public class ApiResponse {
+public class ApiResponse <E> {
     private String status;
     private int code;
     private int total;
-    private List<Book> data;
+    private List<E> data;
 
     // Getters and setters
     public String getStatus() {
@@ -35,11 +35,11 @@ public class ApiResponse {
         this.total = total;
     }
 
-    public List<Book> getData() {
+    public List<E> getData() {
         return data;
     }
 
     public void setData(List<Book> data) {
-        this.data = data;
+        this.data = (List<E>) data;
     }
 }

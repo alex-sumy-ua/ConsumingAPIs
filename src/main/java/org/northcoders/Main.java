@@ -8,10 +8,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-            FakeBooksDAO dao = new FakeBooksDAO();
-            List<Book> books = dao.getBooks();
+        String parameter1 = "/books";
 
-            books.forEach(System.out::println);
+        FakeBooksDAO dao = new FakeBooksDAO();
+        List<Book> books = dao.getData(parameter1);
+
+        String title = "";
+        String author = "";
+        for (Book book : books) {
+            if (book.id() == 2) {
+                author = book.author();
+                title = book.title();
+            }
+        }
+
+        books.forEach(System.out::println);
+
+        System.out.println("The author of the book with title " + title + " is " + author);
     }
 
 }
