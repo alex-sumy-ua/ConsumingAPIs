@@ -8,10 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String parameter1 = "/books";
+        String parameter = "/books";
+        String url = "https://fakerapi.it/api/v1";
 
-        FakeBooksDAO dao = new FakeBooksDAO();
-        List<Book> books = dao.getData(parameter1);
+        FakeBooksDAO dao = new FakeBooksDAO(url);
+        List<Book> books = dao.getData(parameter);
 
         String title = "";
         String author = "";

@@ -10,9 +10,9 @@ public class FakeBooksDAO <E> {
 
     private final WebClient webClient;
 
-    public FakeBooksDAO() {
+    public FakeBooksDAO(String url) {
         this.webClient = WebClient.builder()
-                .baseUrl("https://fakerapi.it/api/v1")
+                .baseUrl(url)
                 .defaultHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }

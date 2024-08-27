@@ -10,7 +10,6 @@ public class ApiResponse <E> {
     private int total;
     private List<E> data;
 
-    // Getters and setters
     public String getStatus() {
         return status;
     }
