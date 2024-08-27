@@ -6,11 +6,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
-public class FakeBooksDAO <E> {
+public class FakeEntitiesDAO<E> {
 
     private final WebClient webClient;
 
-    public FakeBooksDAO(String url) {
+    public FakeEntitiesDAO(String url) {
         this.webClient = WebClient.builder()
                 .baseUrl(url)
                 .defaultHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)

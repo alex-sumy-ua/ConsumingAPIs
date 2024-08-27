@@ -1,6 +1,6 @@
 package org.northcoders;
 
-import org.northcoders.dao.FakeBooksDAO;
+import org.northcoders.dao.FakeEntitiesDAO;
 import org.northcoders.model.Book;
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class Main {
         String parameter = "/books";
         String url = "https://fakerapi.it/api/v1";
 
-        FakeBooksDAO dao = new FakeBooksDAO(url);
+        FakeEntitiesDAO dao = new FakeEntitiesDAO(url);
         List<Book> books = dao.getData(parameter);
 
         String title = "";
